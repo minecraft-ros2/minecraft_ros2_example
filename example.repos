@@ -1,0 +1,10 @@
+repositories:
+    lidarslam_ros2:
+        type: git
+        url: https://github.com/rsasaki0109/lidarslam_ros2.git
+        version: humble
+
+    ndt_omp_ros2:
+        type: git
+        url: https://github.com/rsasaki0109/ndt_omp_ros2.git
+        version: 41bdfba539bb4fe8becd4bc6cf9cd5e5ad35dab1

@@ -1,0 +1,9 @@
+*.pyc
+*.DS_Store
+*.engine
+build/
+install/
+log/
+rosbag*/
+merge_*/
+archive_bag/
