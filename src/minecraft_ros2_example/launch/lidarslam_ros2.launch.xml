@@ -1,0 +1,26 @@
+<launch>  
+    <arg name="lidarslam_param" default="$(find-pkg-share minecraft_ros2_example)/config/lidarslam.yaml"/>
+
+    <node pkg="scanmatcher" exec="scanmatcher_node" output="screen" >
+        <remap from="/input_cloud" to="/player/pointcloud"/>
+        <remap from="/current_pose" to="/localization/lidarslam/current_pose"/>
+        <remap from="/map" to="/localization/lidarslam/map"/>
+        <remap from="/path" to="/localization/lidarslam/path"/>
+        <remap from="/map_array" to="/localization/lidarslam/map_array"/>
+        <param from="$(var lidarslam_param)"/>
+    </node>
+
+    <node pkg="graph_based_slam" exec="graph_based_slam_node" output="screen" >
+        <param from="$(var lidarslam_param)"/>
+    </node>
+
+    <node pkg="tf2_ros" exec="static_transform_publisher" name="base_link_to_player" args="0 0 0 0 0 0 1 base_link player" />
+
+    <node
+      pkg="rviz2"
+      exec="rviz2"
+      name="rviz2"
+      args="-d $(find-pkg-share minecraft_ros2_example)/rviz/lidarslam.rviz"
+      output="screen"
+    />
+</launch>
