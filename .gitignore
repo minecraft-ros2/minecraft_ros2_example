@@ -7,3 +7,5 @@ log/
 rosbag*/
 merge_*/
 archive_bag/
+src/lidarslam_ros2
+src/ndt_omp_ros2

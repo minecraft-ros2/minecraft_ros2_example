@@ -1,0 +1,8 @@
+ <!-- ↪ $ ros2 launch nav2_bringup navigation_launch.py params_file:=/home/kazu/minecraft_ros2_tutorial_ws/src/minecraft_ros2_tutorial/config/nav2_param.yaml  default_bt_xml_filename:=/home/kazu/minecraft_ros2_tutorial_ws/src/minecraft_ros2_tutorial/config/nav2_bt.xml  -->
+
+<launch>
+    <include file="$(find-pkg-share nav2_bringup)/launch/navigation_launch.py">
+        <arg name="params_file" value="$(find-pkg-share minecraft_ros2_example)/config/nav2_param.yaml"/>
+        <arg name="default_bt_xml_filename" value="$(find-pkg-share minecraft_ros2_example)/config/nav2_bt.xml"/>
+    </include>
+</launch>
