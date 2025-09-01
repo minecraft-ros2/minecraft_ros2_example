@@ -1,12 +1,12 @@
 ########################################
-# Nav2 minimal mapless parameters for Minecraft
+# Nav2 minimal worldless parameters for Minecraft
 ########################################
 
 bt_navigator:
   ros__parameters:
     use_sim_time: False
-    global_frame: map
-    robot_base_frame: base_link
+    global_frame: world
+    robot_base_frame: player
     default_bt_xml_filename: "navigate_w_replanning_and_recovery.xml"
     bt_loop_duration: 10
     default_server_timeout: 20
@@ -122,8 +122,8 @@ local_costmap:
     ros__parameters:
       update_frequency: 5.0
       publish_frequency: 2.0
-      global_frame: map
-      robot_base_frame: base_link
+      global_frame: world
+      robot_base_frame: player
       use_sim_time: False
       rolling_window: true
       width: 3
@@ -160,8 +160,8 @@ global_costmap:
     ros__parameters:
       update_frequency: 2.0
       publish_frequency: 1.0
-      global_frame: map
-      robot_base_frame: base_link
+      global_frame: world
+      robot_base_frame: player
       use_sim_time: False
       rolling_window: true
       width: 10
@@ -205,8 +205,8 @@ recoveries_server:
       plugin: "nav2_recoveries/BackUp"
     wait:
       plugin: "nav2_recoveries/Wait"
-    global_frame: map
-    robot_base_frame: base_link
+    global_frame: world
+    robot_base_frame: player
     transform_timeout: 0.1
     use_sim_time: True
     simulate_ahead_time: 2.0
